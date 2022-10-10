@@ -1,0 +1,71 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{pgfgantt}
+
+\definecolor{frenchblue}{rgb}{0.0, 0.45, 0.73}
+\definecolor{etonblue}{rgb}{0.59, 0.78, 0.64}
+\definecolor{darkcoral}{rgb}{0.8, 0.36, 0.27}
+\definecolor{urobilin}{rgb}{0.88, 0.68, 0.13}
+\definecolor{wisteria}{rgb}{0.79, 0.63, 0.86}
+
+\definecolor{darkpastelblue}{rgb}{0.47, 0.62, 0.8}
+
+\begin{document}
+
+
+
+	\begin{ganttchart}[
+		x unit=.5cm,
+		y unit title=0.6cm,
+		y unit chart=0.6cm,
+		vgrid,hgrid, 
+		title label anchor/.style={below=-1.6ex},
+		title left shift=.05,
+		title right shift=-.05,
+		title height=1,
+		bar/.style={fill=gray!25},
+		bar incomplete/.style={fill=cyan!25},
+		progress label text={},
+		bar height=0.7,
+		group right shift=0,
+		group top shift=.6,
+		group height=.1,
+ 		group/.append style={cyan},
+ 		group peaks height =.2,
+		bar1/.style={bar/.append style={fill=frenchblue}},
+		bar2/.style={bar/.append style={fill=etonblue}},
+		bar3/.style={bar/.append style={fill=darkcoral}},
+		bar4/.style={bar/.append style={fill=urobilin}},
+		bar5/.style={bar/.append style={fill=wisteria}},
+		Mile1/.style={milestone/.append style={fill=frenchblue}},
+		Mile2/.style={milestone/.append style={fill=etonblue}},
+		Mile3/.style={milestone/.append style={fill=darkcoral}},
+		Mile4/.style={milestone/.append style={fill=urobilin}},
+		Mile5/.style={milestone/.append style={fill=wisteria}}
+		]
+		{1}{28}
+		%labels		
+	\gantttitle{October22}{4}\gantttitle{November22}{4}\gantttitle{December22}{4}
+	\gantttitle{January23}{4}\gantttitle{February23}{4}\gantttitle{March23}{4}\gantttitle{April23}{4}\\	
+		
+		% \ganttgroup{Research Stay}{2}{7} \\
+		%aim 1
+		\ganttmilestone[Mile3]{Submission paper 3}{4}\\
+		\ganttbar[bar1]{Thesis writing}{1}{12} \\
+		\ganttbar[bar2]{South Africa research trip}{6}{6} \\
+		\ganttmilestone[Mile1]{Thesis submission}{12}\\
+		\ganttbar[bar4]{vacations?}{18}{21} \\
+		\ganttbar[bar5]{Defense, tbd}{22}{24} \\
+		\ganttmilestone[Mile4]{Leave to Montreal}{26}
+
+
+		% \ganttbar[bar/.append style={fill=darkcoral}]{Dataset preparation}{1}{2} \\
+		% \ganttbar[bar/.append style={fill=darkcoral}]{Collaboration Graph Neural Networks}{2}{3} \\
+		% \ganttbar[bar/.append style={fill=darkcoral}]{Co-citations analysis}{3}{4} \\
+		% \ganttbar[bar/.append style={fill=darkcoral}]{Attrition and career age}{4}{5} \\
+		% \ganttbar[bar/.append style={fill=darkcoral}]{Institutional and topical mobility}{5}{6} \\		
+		% \ganttbar[bar/.append style={fill=darkcoral}]{Manuscript preparation}{5}{8}
+		
+	\end{ganttchart}
+
+\end{document}
